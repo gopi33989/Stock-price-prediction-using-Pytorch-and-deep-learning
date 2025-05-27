@@ -102,7 +102,7 @@ Over the course of this project, we will continue adding new code blocks to the 
 
 In this project, we will train an LSTM model to predict stock price movements. Before we can build the "crystal ball" to predict the future, we need historical stock price data to train our deep learning model. To this end, we will query the Alpha Vantage stock data API via a [popular Python wrapper](https://github.com/RomelTorres/alpha_vantage). For this project, we will obtain over 20 years of daily close prices for IBM from November 1999 to April 29, 2021. 
 
-![historical prices](Stock-price-prediction-using-Pytorch-and-deep-learning/Graphs-Actual-vs-predicted-values/Graph01-history-price.png)
+![historical prices](Graphs-Actual-vs-predicted-values/Graph01-history-price.png)
 
 Append the following code block to your **project.py** file. If you re-run the file now, it should generate a graph similar to above thanks to the powerful `matplotlib` library. 
 
@@ -192,7 +192,7 @@ After transforming the dataset into input features and output labels, the shape 
 
 We also split the dataset into two parts, for training and validation. We split the data into 80:20 - 80% of the data is used for training, with the remaining 20% to verify our model's performance in predicting future prices. (Alternatively, another common practice is to split the initial data into train, validation, and test set (70/20/10), where the test dataset is not used at all during the training process.) This graph shows the portion of data for training and validation, approximately data before 2017 are used for training and after for verifying our model's performance.
 
-![dataset split](Stock-price-prediction-using-Pytorch-and-deep-learning/Graphs-Actual-vs-predicted-values/Graph02-train-validation-split.png)
+![dataset split](Graphs-Actual-vs-predicted-values/Graph02-train-validation-split.png)
 
 Append the following code block to your **project.py** file. If you re-run the file now, it should generate a graph similar to above, where the training data is colored in green and validation data is colored in blue. 
 
@@ -520,7 +520,7 @@ Epoch[100/100] | loss train:0.006102, test:0.000972 | lr:0.000100
 
 To visually inspect our model's performance, we will use the newly trained model to make predictions on the training and validation datasets we've created earlier in this project. If we see that the model can predict values that closely mirror the *training* dataset, it shows that the model managed to memorize the data. And if the model can predict values that resemble the *validation* dataset, it has managed to learn the patterns in our sequential data and generalize the patterns to unseen data points. 
 
-![actual vs predicted](Stock-price-prediction-using-Pytorch-and-deep-learning/Graphs-Actual-vs-predicted-values/Graph03-actual-vs-predicted.png)
+![actual vs predicted](Graphs-Actual-vs-predicted-values/Graph03-actual-vs-predicted.png)
 
 Append the following code block to your **project.py** file. Re-running the file should generate a graph similar to the figure above. 
 
@@ -587,7 +587,7 @@ From our results, we can see that the model has managed to learn and predict on 
 
 Let's zoom into the chart and look closely at the blue `Predicted price (validation)` segment by comparing it against its actual prices values.
 
-![predicted validation zoom in](Stock-price-prediction-using-Pytorch-and-deep-learning/Graphs-Actual-vs-predicted-values/Graph04-actual-vs-predicted-zoom.png)
+![predicted validation zoom in](Graphs-Actual-vs-predicted-values/Graph04-actual-vs-predicted-zoom.png)
 
 Append the following code block to your **project.py** file and re-run the script. 
 
@@ -625,7 +625,7 @@ It is also worth noting that model training & evaluation is an iterative process
 
 By now, we have trained an LSTM model that can (fairly accurately) predict the next day's price based on the past 20 days' close prices. This means we now have a crystal ball in hand! Let's supply the past 20 days' close prices to the model and see what it predicts for the next trading day (i.e., the future!). Append the following code to your **project.py** file and re-run the script one last time. 
 
-![predicted tomorrow price](Stock-price-prediction-using-Pytorch-and-deep-learning/Graphs-Actual-vs-predicted-values/Graph05-predict-the-unseen.png)
+![predicted tomorrow price](Graphs-Actual-vs-predicted-values/Graph05-predict-the-unseen.png)
 
 <details>
 <summary>View codes</summary>
